@@ -82,7 +82,7 @@ const Root = (props) =>  {
 
     return(
       <Fragment>
-        <Auth0Provider domain={auth0.domain} clientId={auth0.clientId} redirectUri={auth0.redirectUri}>
+        {/* <Auth0Provider domain={auth0.domain} clientId={auth0.clientId} redirectUri={auth0.redirectUri}> */}
         <Provider store={store}>
         <BrowserRouter basename={`/`}>
         <Switch>
@@ -114,7 +114,7 @@ const Root = (props) =>  {
           
           <Route  path={`${process.env.PUBLIC_URL}/callback`} render={() => <Callback/>} />
           
-          {currentUser !== null || authenticated || jwt_token  ?
+          {/* {currentUser !== null || authenticated || jwt_token  ? */}
           
           <App>
 
@@ -138,13 +138,13 @@ const Root = (props) =>  {
           </TransitionGroup> 
           
           </App>
-          :
-          <Redirect to={`${process.env.PUBLIC_URL}/login`} />
-          }      
+          {/* : */}
+          {/* <Redirect to={`${process.env.PUBLIC_URL}/login`} /> */}
+          {/* }       */}
         </Switch>
         </BrowserRouter>
         </Provider>
-        </Auth0Provider>
+        {/* </Auth0Provider> */}
       </Fragment>
       )
 }
